@@ -1,5 +1,6 @@
 # Online Judge System
-## cms-installer
+## cms installer on ubuntu 18.04
+### run path before install
 
 v1.4.rc1: Version 1.4.rc1
 
