@@ -6,3 +6,30 @@ apt install -y mono-vbnc sendmail ncurses-base libncurses-dev expat
 apt install -y libelf-dev gawk gettext libzip-dev uuid-dev bison flex mono-devel mono-runtime
 apt install -y libncursesw*
 apt install -y zlib1g* libcurl4-openssl-dev php7.2-cli apache2
+wget -O freebasic.tar.gz http://downloads.sourceforge.net/fbc/FreeBASIC-1.05.0-linux-x86_64.tar.gz?download
+tar -xvf freebasic.tar.gz -C /opt/
+cd /opt/FreeBASIC-1.05.0-linux-x86_64/
+sudo ./install.sh -i
+cd
+sudo groupadd ejudge
+sudo useradd ejudge -s /bin/bash -m -d /home/ejudge -g ejudge
+sudo adduser ejudge sudo
+sudo mkdir -p /home/judges /home/judges/test_work
+sudo chown ejudge:ejudge /home/judges /home/judges/test_work
+sudo chmod 0755 /home/judges /home/judges/test_work
+sudo mkdir -p /var/www/html/cgi-bin
+sudo mkdir -p /var/www/html/htdocs
+sudo chmod 0777 /var/www/html/cgi-bin /var/www/html/htdocs
+service apache2 restart
+cd /home/ejudge
+wget --no-check-certificate http://www.ejudge.ru/download/ejudge-3.7.9.tgz
+tar -xvzf ejudge-3.7.9.tgz
+cd ejudge
+./configure --prefix=/home/ejudge/inst-ejudge \
+  --enable-contests-home-dir=/home/judges \
+  --with-httpd-cgi-bin-dir=/var/www/html/cgi-bin \
+  --with-httpd-htdocs-dir=/var/www/html/htdocs \
+  --enable-ajax \
+  --enable-charset=utf-8
+make
+make install
