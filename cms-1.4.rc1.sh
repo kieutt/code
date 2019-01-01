@@ -3,7 +3,7 @@
 cd "$(dirname "$0")"
 LINK="https://github.com/cms-dev/cms/releases/download/v1.4.rc1/v1.4.rc1.tar.gz"
 ARCHIVE="v1.4.rc1.tar.gz"
-WARNING="Run ./install.sh patch if you are using Ubuntu 18.04 or higher"
+WARNING="Run ./cms-1.4.rc1.sh patch if you are using Ubuntu 18.04 or higher"
 
 case "$1" in
     apt)
@@ -104,17 +104,17 @@ case "$1" in
     ;;
     
     install)
-        ./install.sh apt &&
-        ./install.sh wget &&
+        ./cms-1.4.rc1.sh apt &&
+        ./cms-1.4.rc1.sh wget &&
         (
             lsb_release -a | grep "18.04" &&
-            ./install.sh patch ||
+            ./cms-1.4.rc1.sh patch ||
             echo "$WARNING"
         ) &&
-        ./install.sh prerequisites &&
-        ./install.sh virtualenv &&
-        ./install.sh setup &&
-        ./install.sh postgres &&
+        ./cms-1.4.rc1.sh prerequisites &&
+        ./cms-1.4.rc1.sh virtualenv &&
+        ./cms-1.4.rc1.sh setup &&
+        ./cms-1.4.rc1.sh postgres &&
         (
             groups | grep cmsuser ||
             echo "Please logout and login again"
@@ -123,19 +123,19 @@ case "$1" in
     ;;
     
     uninstall)
-        ./install.sh unpostgres &&
-        ./install.sh unsetup &&
-        ./install.sh unvirtualenv &&
-        ./install.sh unprerequisites &&
-        ./install.sh unwget &&
+        ./cms-1.4.rc1.sh unpostgres &&
+        ./cms-1.4.rc1.sh unsetup &&
+        ./cms-1.4.rc1.sh unvirtualenv &&
+        ./cms-1.4.rc1.sh unprerequisites &&
+        ./cms-1.4.rc1.sh unwget &&
         echo "Uninstalled successfully"
     ;;
     
     help)
-        echo "A script to install CMS 1.3.2 quickly"
+        echo "A script to install CMS 1.4.0 quickly"
         echo ""
-        echo "Install: ./install.sh install"
-        echo "Uninstall: ./install.sh uninstall"
+        echo "Install: ./cms-1.4.rc1.sh install"
+        echo "Uninstall: ./cms-1.4.rc1.sh uninstall"
     ;;
     
     *)
