@@ -1,1 +1,6 @@
 apt update && apt upgrade -y && apt autoremove -y && apt install mc vim-nox git -y
+apt install -y default-jre build-essential
+apt install -y software-properties-common python python3 ruby ruby-full perl
+apt install -y fpc
+apt install -y mono-vbnc sendmail ncurses-base libncurses-dev expat
+apt install -y libelf-dev gawk gettext libzip-dev uuid-dev bison flex mono-devel mono-runtime
