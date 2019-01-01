@@ -11,7 +11,7 @@ case "$1" in
         fpc postgresql postgresql-client gettext python2.7 \
         iso-codes shared-mime-info stl-manual cgroup-lite libcap-dev \
         python-dev libpq-dev libcups2-dev libyaml-dev \
-        libffi-dev python-pip virtualenv
+        libffi-dev python-pip virtualenv vim-nox mc
     ;;
     
     aptoptional)
