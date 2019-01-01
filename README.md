@@ -9,7 +9,7 @@ https://github.com/cms-dev/cms/releases/
 ## Installation
 
 ```
-chmod a+x install.sh
+chmod a+x cms-1.4.rc1.sh
 ./install install
 ```
 
@@ -28,7 +28,7 @@ For example,
 ```
 source /usr/local/lib/cms/bin/activate
 cmsInitDB
-cmsAddAdmin -p 12345678 admin
+cmsAddAdmin -p 12345678a@ admin
 cmsAdminWebServer
 # Now visit localhost:8889, you should see the admin page.
 deactivate
