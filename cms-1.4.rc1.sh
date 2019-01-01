@@ -7,7 +7,7 @@ WARNING="Run ./cms-1.4.rc1.sh patch if you are using Ubuntu 18.04 or higher"
 
 case "$1" in
     apt)
-        sudo apt install build-essential openjdk-8-jre openjdk-8-jdk \
+        sudo apt install -y build-essential openjdk-8-jre openjdk-8-jdk \
         fpc postgresql postgresql-client gettext python2.7 \
         iso-codes shared-mime-info stl-manual cgroup-lite libcap-dev \
         python-dev libpq-dev libcups2-dev libyaml-dev \
@@ -15,7 +15,7 @@ case "$1" in
     ;;
     
     aptoptional)
-        sudo apt-get install nginx-full php7.0-cli php7.0-fpm \
+        sudo apt-get install -y nginx-full php7.0-cli php7.0-fpm \
         phppgadmin texlive-latex-base a2ps gcj-jdk haskell-platform
     ;;
     
@@ -52,7 +52,7 @@ case "$1" in
     
     virtualenv)
         (
-            sudo apt install virtualenv
+            sudo apt install -y virtualenv
             sudo mkdir /usr/local/lib/cms/
             sudo chown `whoami`:`whoami` /usr/local/lib/cms/
             virtualenv -p python2 /usr/local/lib/cms/
