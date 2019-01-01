@@ -7,7 +7,5 @@ sudo swapon /swapfile
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 sudo sysctl vm.swappiness=10
 sudo sysctl vm.vfs_cache_pressure=50
-vm.swappiness=10
-vm.vfs_cache_pressure=50
-echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
-echo 'vm.vfs_cache_pressure=50' | sudo tee -a /etc/sysctl.conf
+sudo echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
+sudo echo 'vm.vfs_cache_pressure=50' | sudo tee -a /etc/sysctl.conf
