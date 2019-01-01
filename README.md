@@ -10,7 +10,7 @@ https://github.com/cms-dev/cms/releases/
 
 ```
 chmod a+x cms-1.4.rc1.sh
-./install install
+./cms-1.4.rc1.sh install
 ```
 
 Now CMS is installed.
