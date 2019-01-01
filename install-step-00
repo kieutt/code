@@ -4,3 +4,5 @@ apt install -y software-properties-common python python3 ruby ruby-full perl
 apt install -y fpc
 apt install -y mono-vbnc sendmail ncurses-base libncurses-dev expat
 apt install -y libelf-dev gawk gettext libzip-dev uuid-dev bison flex mono-devel mono-runtime
+apt install -y libncursesw*
+apt install -y zlib1g* libcurl4-openssl-dev php7.2-cli apache2
