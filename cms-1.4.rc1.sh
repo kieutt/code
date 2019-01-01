@@ -139,6 +139,6 @@ case "$1" in
     ;;
     
     *)
-        echo "Invalid command, please type ./install help"
+        echo "Invalid command, please type ./cms-1.4.rc1.sh help"
     ;;
 esac
